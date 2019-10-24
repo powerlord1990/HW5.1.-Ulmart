@@ -10,6 +10,19 @@ public class Pot extends Product {
         this.manufactured = manufactured;
     }
 
+    @Override
+    public boolean match(String productType) {
+        return productType.toUpperCase().equals("POT");
+    }
+
+    @Override
+    public String toString() {
+        return "Pot{" +
+                "color='" + color + '\'' +
+                ", manufactured='" + manufactured + '\'' +
+                '}';
+    }
+
     public String getColor() {
         return color;
     }

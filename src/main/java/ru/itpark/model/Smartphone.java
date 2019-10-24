@@ -17,6 +17,22 @@ public class Smartphone extends Product {
         this.processor = processor;
     }
 
+    @Override
+    public boolean match(String productType) {
+        return productType.toUpperCase().equals("SMARTPHONE");
+    }
+
+    @Override
+    public String toString() {
+        return "Smartphone{" +
+                "color='" + color + '\'' +
+                ", manufactured='" + manufactured + '\'' +
+                ", operatingSystem='" + operatingSystem + '\'' +
+                ", ram=" + ram +
+                ", processor='" + processor + '\'' +
+                '}';
+    }
+
     public String getColor() {
         return color;
     }

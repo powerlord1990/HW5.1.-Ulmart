@@ -14,6 +14,21 @@ public class TV extends Product {
         this.color = color;
     }
 
+    @Override
+    public boolean match(String productType) {
+        return productType.toUpperCase().equals("TV");
+    }
+
+    @Override
+    public String toString() {
+        return "TV{" +
+                "manufactured='" + manufactured + '\'' +
+                ", screenSize=" + screenSize +
+                ", smart=" + smart +
+                ", color='" + color + '\'' +
+                '}';
+    }
+
     public String getManufactured() {
         return manufactured;
     }

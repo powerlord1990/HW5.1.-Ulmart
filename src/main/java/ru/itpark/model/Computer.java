@@ -12,6 +12,20 @@ public class Computer extends Product {
         this.hdd = hdd;
     }
 
+    @Override
+    public boolean match(String productType) {
+        return productType.toUpperCase().equals("COMPUTER");
+    }
+
+    @Override
+    public String toString() {
+        return "Computer{" +
+                "processor='" + processor + '\'' +
+                ", videocart='" + videocart + '\'' +
+                ", hdd=" + hdd +
+                '}';
+    }
+
     public String getProcessor() {
         return processor;
     }

@@ -12,6 +12,20 @@ public class TShirt extends Product {
         this.manufactured = manufactured;
     }
 
+    @Override
+    public boolean match(String productType) {
+        return productType.toUpperCase().equals("TSHIRT");
+    }
+
+    @Override
+    public String toString() {
+        return "TShirt{" +
+                "color='" + color + '\'' +
+                ", size=" + size +
+                ", manufactured='" + manufactured + '\'' +
+                '}';
+    }
+
     public String getColor() {
         return color;
     }

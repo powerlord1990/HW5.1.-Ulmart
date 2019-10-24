@@ -11,6 +11,19 @@ public class Product {
         this.price = price;
     }
 
+    public boolean match(String productType) {
+        return false;
+    }
+
+    @Override
+    public String toString() {
+        return "Product{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", price=" + price +
+                '}';
+    }
+
     public long getId() {
         return id;
     }
