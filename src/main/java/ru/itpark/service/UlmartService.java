@@ -17,9 +17,6 @@ public class UlmartService {
     }
 
     public List<Product> searchByName(String text) {
-        if (text.length() < 3) {
-            throw new IllegalArgumentException("text must contain at least 3 characters");
-        }
         List<Product> result = new LinkedList<>();
         for (Product item : repository.getAll()) {
             if (item.getName().toLowerCase().contains(text.toLowerCase())) {
@@ -43,13 +40,6 @@ public class UlmartService {
 
     public void add(Collection<Product> items) {
         for (Product item : items) {
-            if (item.getId() != 0) {
-                throw new IllegalArgumentException("id must be 0");
-            }
-            if (item.getPrice() <= 0) {
-                throw new IllegalArgumentException("price must be greater than 0");
-            }
-
             repository.save(item);
         }
     }
