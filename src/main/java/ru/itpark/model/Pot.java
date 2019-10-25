@@ -17,8 +17,8 @@ public class Pot extends Product {
 
     @Override
     public String toString() {
-        return "Pot{" +
-                "color='" + color + '\'' +
+        return "Pot{" +"id= "+getId()+
+                " color='" + color + '\'' +
                 ", manufactured='" + manufactured + '\'' +
                 '}';
     }

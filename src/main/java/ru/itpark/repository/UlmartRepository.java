@@ -1,10 +1,13 @@
 package ru.itpark.repository;
 
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import ru.itpark.model.Product;
 
 import java.util.Collection;
 import java.util.LinkedList;
-
+@Data
+@NoArgsConstructor
 public class UlmartRepository {
     private Collection<Product> items = new LinkedList<>();
     private int nextId = 1;
@@ -26,12 +29,6 @@ public class UlmartRepository {
         return items;
     }
 
-    public int getNextId() {
-        return nextId;
-    }
 
-    public void setNextId(int nextId) {
-        this.nextId = nextId;
-    }
 }
 

@@ -19,8 +19,8 @@ public class Computer extends Product {
 
     @Override
     public String toString() {
-        return "Computer{" +
-                "processor='" + processor + '\'' +
+        return "Computer{" +"id= "+getId()+
+                " processor='" + processor + '\'' +
                 ", videocart='" + videocart + '\'' +
                 ", hdd=" + hdd +
                 '}';

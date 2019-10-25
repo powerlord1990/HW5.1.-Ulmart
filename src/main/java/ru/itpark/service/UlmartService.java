@@ -1,10 +1,13 @@
 package ru.itpark.service;
 
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import ru.itpark.model.Product;
 import ru.itpark.repository.UlmartRepository;
 
 import java.util.*;
-
+@Data
+@NoArgsConstructor
 public class UlmartService {
     private UlmartRepository repository;
 
@@ -14,7 +17,6 @@ public class UlmartService {
 
     public List<Product> searchByName(String text) {
         List<Product> items = new LinkedList<>();
-
         for (Product item : repository.getAll()) {
             if (item.getName().toUpperCase().contains(text.toUpperCase())) {
                 items.add(item);
@@ -73,8 +75,6 @@ public class UlmartService {
     }
 
 
-    public UlmartRepository getRepository() {
-        return repository;
-    }
+
 }
 
