@@ -26,10 +26,10 @@ public class UlmartService {
         return items;
     }
 
-    public List<Product> searchByType(String productType) {
+    public List<Product> searchByType(String type) {
         List<Product> items = new LinkedList<>();
         for (Product item : repository.getAll()) {
-            if (item.match(productType)) {
+            if (item.match(type)) {
                 items.add(item);
             }
         }
