@@ -13,14 +13,14 @@ public class Computer extends Product {
     }
 
     @Override
-    public boolean match(String productType) {
-        return productType.toUpperCase().equals("COMPUTER");
+    public boolean match(String type) {
+        return type.toUpperCase().equals("COMPUTER");
     }
 
     @Override
     public String toString() {
-        return "Computer{" +"id= "+getId()+
-                " processor='" + processor + '\'' +
+        return "Computer{" +
+                "processor='" + processor + '\'' +
                 ", videocart='" + videocart + '\'' +
                 ", hdd=" + hdd +
                 '}';
