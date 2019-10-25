@@ -21,7 +21,7 @@ public class TV extends Product {
 
     @Override
     public String toString() {
-        return "TV{" +"id='"+getId()+
+        return "TV{" + super.toString() +
                 "' manufactured='" + manufactured + '\'' +
                 ", screenSize=" + screenSize +
                 ", smart=" + smart +

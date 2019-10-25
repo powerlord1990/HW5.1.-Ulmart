@@ -28,17 +28,17 @@ public class Main {
                 new Pot(1234, "горшок стальной", 1_000, 4.5, "green", "RosCosmos")
         );
 
-        System.out.println(service.searchByName("ПК"));
-        System.out.println("Отсортированный по именам " + service.SortByName());
-        System.out.println();
-        System.out.println(service.searchByType("smartphone"));
-        System.out.println();
-        System.out.println("Отсортированный по цене по возрастанию " + service.SortByPrice());
-        System.out.println();
-        System.out.println("Отсортированный по цене по убыванию " + service.SortByPriceDesc());
-        System.out.println();
-        System.out.println("Отсортированный по рейтингу " + service.SortByRating());
-        System.out.println();
+//        System.out.println(service.searchByName("ПК"));
+//        System.out.println("Отсортированный по именам " + service.SortByName());
+//        System.out.println();
+//        System.out.println(service.searchByType("smartphone"));
+//        System.out.println();
+//        System.out.println("Отсортированный по цене по возрастанию " + service.SortByPrice());
+//        System.out.println();
+//        System.out.println("Отсортированный по цене по убыванию " + service.SortByPriceDesc());
+//        System.out.println();
+//        System.out.println("Отсортированный по рейтингу " + service.SortByRating());
+//        System.out.println();
 
 
         System.out.println(service.getRepository());

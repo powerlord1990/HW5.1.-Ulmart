@@ -15,6 +15,17 @@ public class UlmartService {
         this.repository = repository;
     }
 
+    public void add(Collection<Product> items) {
+        for (Product item : items) {
+            repository.save(item);
+        }
+    }
+
+    public void add(Product... items) {
+        Collection<Product> products = new LinkedList<>(Arrays.asList(items));
+        add(products);
+    }
+
     public List<Product> searchByName(String text) {
         List<Product> items = new LinkedList<>();
         for (Product item : repository.getAll()) {
@@ -35,17 +46,6 @@ public class UlmartService {
         }
         items.sort((o1, o2) -> o1.getName().compareToIgnoreCase(o2.getName()));
         return items;
-    }
-
-    public void add(Collection<Product> items) {
-        for (Product item : items) {
-            repository.save(item);
-        }
-    }
-
-    public void add(Product... items) {
-        Collection<Product> products = new LinkedList<>(Arrays.asList(items));
-        add(products);
     }
 
     public boolean remove(int id) {

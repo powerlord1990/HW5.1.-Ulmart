@@ -19,11 +19,11 @@ public class Computer extends Product {
 
     @Override
     public String toString() {
-        return "Computer{" +
+        return "Computer{" + super.toString() +
                 "processor='" + processor + '\'' +
                 ", videocart='" + videocart + '\'' +
                 ", hdd=" + hdd +
-                '}';
+                "} " + super.toString();
     }
 
     public String getProcessor() {

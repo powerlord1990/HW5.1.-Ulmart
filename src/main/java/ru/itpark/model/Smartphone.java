@@ -24,7 +24,7 @@ public class Smartphone extends Product {
 
     @Override
     public String toString() {
-        return "Smartphone{" +"id= "+getId()+
+        return "Smartphone{" + super.toString() +
                 " color='" + color + '\'' +
                 ", manufactured='" + manufactured + '\'' +
                 ", operatingSystem='" + operatingSystem + '\'' +
