@@ -6,15 +6,15 @@ public class Smartphone extends Product {
     private String manufactured;
     private String operatingSystem;
     private int ram;
-    private String processor;
 
-    public Smartphone(long id, String name, int price, String color, String manufactured, String operatingSystem, int ram, String processor) {
-        super(id, name, price);
+
+    public Smartphone(int id, String name, int price, double rating, String color, String manufactured, String operatingSystem, int ram) {
+        super(id, name, price, rating);
         this.color = color;
         this.manufactured = manufactured;
         this.operatingSystem = operatingSystem;
         this.ram = ram;
-        this.processor = processor;
+
     }
 
     @Override
@@ -29,7 +29,6 @@ public class Smartphone extends Product {
                 ", manufactured='" + manufactured + '\'' +
                 ", operatingSystem='" + operatingSystem + '\'' +
                 ", ram=" + ram +
-                ", processor='" + processor + '\'' +
                 '}';
     }
 
@@ -65,11 +64,4 @@ public class Smartphone extends Product {
         this.ram = ram;
     }
 
-    public String getProcessor() {
-        return processor;
-    }
-
-    public void setProcessor(String processor) {
-        this.processor = processor;
-    }
 }

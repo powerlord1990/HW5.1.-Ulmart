@@ -4,8 +4,8 @@ public class Pot extends Product {
     private String color;
     private String manufactured;
 
-    public Pot(long id, String name, int price, String color, String manufactured) {
-        super(id, name, price);
+    public Pot(int id, String name, int price, double rating, String color, String manufactured) {
+        super(id, name, price, rating);
         this.color = color;
         this.manufactured = manufactured;
     }

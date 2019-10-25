@@ -6,36 +6,33 @@ import ru.itpark.repository.UlmartRepository;
 import java.util.*;
 
 public class UlmartService {
-    private final UlmartRepository repository;
+    private UlmartRepository repository;
 
     public UlmartService(UlmartRepository repository) {
         this.repository = repository;
     }
 
-    public UlmartRepository getRepository() {
-        return repository;
-    }
-
     public List<Product> searchByName(String text) {
-        List<Product> result = new LinkedList<>();
+        List<Product> items = new LinkedList<>();
+
         for (Product item : repository.getAll()) {
-            if (item.getName().toLowerCase().contains(text.toLowerCase())) {
-                result.add(item);
+            if (item.getName().toUpperCase().contains(text.toUpperCase())) {
+                items.add(item);
             }
         }
-        result.sort((o1, o2) -> o1.getName().compareToIgnoreCase(o2.getName()));
-        return result;
+        items.sort((o1, o2) -> o1.getName().compareToIgnoreCase(o2.getName()));
+        return items;
     }
 
     public List<Product> searchByType(String productType) {
-        List<Product> result = new LinkedList<>();
+        List<Product> items = new LinkedList<>();
         for (Product item : repository.getAll()) {
             if (item.match(productType)) {
-                result.add(item);
+                items.add(item);
             }
         }
-        result.sort((o1, o2) -> o1.getName().compareToIgnoreCase(o2.getName()));
-        return result;
+        items.sort((o1, o2) -> o1.getName().compareToIgnoreCase(o2.getName()));
+        return items;
     }
 
     public void add(Collection<Product> items) {
@@ -49,28 +46,35 @@ public class UlmartService {
         add(products);
     }
 
-    public boolean remove(long id) {
+    public boolean remove(int id) {
         return repository.delete(id);
     }
 
-    public List<Product> getSortedByPrice() {
-        return getSortedBy((o1, o2) -> o1.getPrice() - o2.getPrice());
-    }
-
-    public List<Product> getSortedByPriceDesc() {
-        return getSortedBy((o1, o2) -> -(o1.getPrice() - o2.getPrice()));
-    }
-
-    public List<Product> getSortedByName() {
-        return getSortedBy((o1, o2) -> o1.getName().compareToIgnoreCase(o2.getName()));
-    }
-
-    private List<Product> getSortedBy(Comparator<Product> comparator) {
+    private List<Product> SortBy(Comparator<Product> comparator) {
         List<Product> result = new LinkedList<>(repository.getAll());
         result.sort(comparator);
         return result;
     }
 
+    public List<Product> SortByPrice() {
+        return SortBy((o1, o2) -> o1.getPrice() - o2.getPrice());
+    }
 
+    public List<Product> SortByPriceDesc() {
+        return SortBy((o1, o2) -> -(o1.getPrice() - o2.getPrice()));
+    }
+
+    public List<Product> SortByName() {
+        return SortBy((o1, o2) -> o1.getName().compareToIgnoreCase(o2.getName()));
+    }
+
+    public List<Product> SortByRating() {
+        return SortBy(Comparator.comparingDouble(Product::getRating));
+    }
+
+
+    public UlmartRepository getRepository() {
+        return repository;
+    }
 }
 

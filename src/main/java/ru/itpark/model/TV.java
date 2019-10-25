@@ -6,8 +6,8 @@ public class TV extends Product {
     private boolean smart;
     private String color;
 
-    public TV(long id, String name, int price, String manufactured, int screenSize, boolean smart, String color) {
-        super(id, name, price);
+    public TV(int id, String name, int price, double rating, String manufactured, int screenSize, boolean smart, String color) {
+        super(id, name, price, rating);
         this.manufactured = manufactured;
         this.screenSize = screenSize;
         this.smart = smart;

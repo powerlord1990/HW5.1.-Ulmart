@@ -7,14 +7,14 @@ import java.util.LinkedList;
 
 public class UlmartRepository {
     private Collection<Product> items = new LinkedList<>();
-    private long nextId = 1;
+    private int nextId = 1;
 
     public void save(Product item) {
         item.setId(nextId++);
         items.add(item);
     }
 
-    public boolean delete(long id) {
+    public boolean delete(int id) {
         return items.removeIf(Product -> Product.getId() == id);
     }
 
@@ -26,11 +26,11 @@ public class UlmartRepository {
         return items;
     }
 
-    public long getNextId() {
+    public int getNextId() {
         return nextId;
     }
 
-    public void setNextId(long nextId) {
+    public void setNextId(int nextId) {
         this.nextId = nextId;
     }
 }

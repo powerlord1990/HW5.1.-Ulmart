@@ -1,14 +1,16 @@
 package ru.itpark.model;
 
 public class Product {
-    private long id;
+    private int id;
     private String name;
     private int price;
+    private double rating;
 
-    public Product(long id, String name, int price) {
+    public Product(int id, String name, int price, double rating) {
         this.id = id;
         this.name = name;
         this.price = price;
+        this.rating = rating;
     }
 
     public boolean match(String productType) {
@@ -21,6 +23,7 @@ public class Product {
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", price=" + price +
+                ", rating=" + rating +
                 '}';
     }
 
@@ -28,7 +31,7 @@ public class Product {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -46,5 +49,13 @@ public class Product {
 
     public void setPrice(int price) {
         this.price = price;
+    }
+
+    public double getRating() {
+        return rating;
+    }
+
+    public void setRating(double rating) {
+        this.rating = rating;
     }
 }
