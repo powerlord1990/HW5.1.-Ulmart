@@ -29,6 +29,12 @@ public class UlmartRepository {
         return items;
     }
 
+    public void setItems(Collection<Product> items) {
+        this.items = items;
+    }
 
+    public void setNextId(int nextId) {
+        this.nextId = nextId;
+    }
 }
 

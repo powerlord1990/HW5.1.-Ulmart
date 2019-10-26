@@ -4,6 +4,7 @@ import ru.itpark.model.*;
 import ru.itpark.repository.UlmartRepository;
 import ru.itpark.service.UlmartService;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.LinkedList;
 
@@ -11,7 +12,9 @@ import java.util.LinkedList;
 public class Main {
     public static void main(String[] args) {
         UlmartService service = new UlmartService(new UlmartRepository());
-        Collection<Product> collection = new LinkedList<>();
+        Collection<Product> collection = new ArrayList<>();
+
+
         collection.add(new TV(6, "45646ffgs", 75_000, 4.4, "Sony", 55, true, "black"));
         service.add(collection);
 
@@ -28,23 +31,22 @@ public class Main {
                 new Pot(1234, "горшок стальной", 1_000, 4.5, "green", "RosCosmos")
         );
 
-//        System.out.println(service.searchByName("ПК"));
-//        System.out.println("Отсортированный по именам " + service.SortByName());
-//        System.out.println();
-//        System.out.println(service.searchByType("smartphone"));
-//        System.out.println();
-//        System.out.println("Отсортированный по цене по возрастанию " + service.SortByPrice());
-//        System.out.println();
-//        System.out.println("Отсортированный по цене по убыванию " + service.SortByPriceDesc());
-//        System.out.println();
-//        System.out.println("Отсортированный по рейтингу " + service.SortByRating());
-//        System.out.println();
+        System.out.println(service.searchByName("ПК"));
+        System.out.println("Отсортированный по именам " + service.SortByName());
+        System.out.println();
+        System.out.println(service.searchByType("smartphone"));
+        System.out.println();
+        System.out.println("Отсортированный по цене по возрастанию " + service.SortByPrice());
+        System.out.println();
+        System.out.println("Отсортированный по цене по убыванию " + service.SortByPriceDesc());
+        System.out.println();
+        System.out.println("Отсортированный по рейтингу " + service.SortByRating());
+        System.out.println();
 
 
         System.out.println(service.getRepository());
         service.remove(3);
         System.out.println(service.getRepository());
-
 
     }
 }
