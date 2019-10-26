@@ -18,7 +18,7 @@ public class UlmartRepository {
     }
 
     public boolean delete(int id) {
-        return items.removeIf(Product -> Product.getId() == id);
+        return items.removeIf(product -> product.getId() == id);
     }
 
     public Collection<Product> getAll() {
